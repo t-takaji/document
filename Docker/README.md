@@ -1,9 +1,9 @@
-## Mac用インストール
+## Install Docker for Mac
 1. 「docker for mac」でGoogle検索
 2. 「Install Docker Desktop on Mac」のリンクからダウンロードする
 
 
-## コマンド
+## Docker Command
 
  - イメージのビルド
 ```
@@ -24,4 +24,14 @@ docker-compose ps
  - ログを表示
 ```
 docker-compose logs
+```
+ - appコンテナの中に入る
+```
+docker-compose exec app bash
+```
+
+## Laravel Command
+ - ルーティングの確認
+```
+php artisan route:list
 ```

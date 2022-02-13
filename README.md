@@ -2,4 +2,4 @@
 
 ## ・見える化ツール
 - visual paradigm  
-https://online.visual-paradigm.com/ja/diagrams/solutions/free-visual-paradigm-online/
+https://online.visual-paradigm.com/ja/diagrams/templates/flowchart/swimlane-diagram/

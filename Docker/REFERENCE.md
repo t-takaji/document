@@ -6,3 +6,5 @@ https://laraweb.net/environment/8652/
 https://qiita.com/sayama0402/items/668f7148759910f65da9
 - LaravelでCRUDのAPIをささっと作る - Qiita  
 https://qiita.com/sayama0402/items/0188c740360479db3f98
+- Udemy  
+https://github.com/uchidayuma/udemy-laravel8-mysql-simple-memo/tree/feature_ecs

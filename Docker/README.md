@@ -35,3 +35,21 @@ docker-compose exec app bash
 ```
 php artisan route:list
 ```
+
+## DB Command
+```
+psql -U postgres
+```
+
+| コマンド | 内容 | 補足 |
+| :--- | :--- | :--- |
+| \\? | ヘルプ。\コマンド一覧 | \hとは異なる |
+| \du | ユーザー毎のロール一覧 | display users |
+| \l | DB一覧 | list |
+| \c DB名 | DBに接続 | change。プロンプトがDB名になる |
+| \dt | テーブル一覧（タイプ、オーナー） | display table |
+| \z | テーブル一覧（アクセス権一覧） | \dpと同じ（display privilage） |
+| \conninfo | 接続中のDB情報（DB名、ユーザー名、ソケット、ポート番号） | connecting infomation |
+| \h | ヘルプ。SQLコマンド一覧 | SQLは大文字・小文字で区別なし |
+| \s | \コマンド実行結果の履歴 | sequence |
+| \q | 対話モードの終了 | quit |

@@ -8,5 +8,7 @@ https://qiita.com/sayama0402/items/668f7148759910f65da9
 https://qiita.com/sayama0402/items/0188c740360479db3f98
 - validateについて  
 https://reffect.co.jp/laravel/laravel_validation_understanding#validate
+- ログイン自作  
+https://laraweb.net/tutorial/1888/
 - Udemy  
 https://github.com/uchidayuma/udemy-laravel8-mysql-simple-memo/tree/feature_ecs

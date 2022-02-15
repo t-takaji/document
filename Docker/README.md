@@ -31,6 +31,11 @@ docker-compose exec app bash
 ```
 
 ## Laravel Command
+ - マイグレーションファイルの内容をデータベースに反映
+```
+php artisan migrate
+```
+
  - ルーティングの確認
 ```
 php artisan route:list

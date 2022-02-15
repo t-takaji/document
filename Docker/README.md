@@ -35,12 +35,14 @@ docker-compose exec app bash
 ```
 php artisan migrate
 ```
-
  - ルーティングの確認
 ```
 php artisan route:list
 ```
-
+ - seederを使ってダミーデータを入れる
+```
+php artisan db:seed --class=TestDataSeeder
+```
 ## DB Command
 ```
 psql -U postgres

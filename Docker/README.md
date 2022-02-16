@@ -39,7 +39,15 @@ php artisan migrate
 ```
 php artisan route:list
 ```
- - seederを使ってダミーデータを入れる
+ - コントローラー作成
+```
+php artisan make:controller UsersController
+```
+ - シーダー作成
+```
+php artisan make:seeder UsersTableSeeder
+```
+- seederを使ってダミーデータを入れる
 ```
 php artisan db:seed --class=TestDataSeeder
 ```

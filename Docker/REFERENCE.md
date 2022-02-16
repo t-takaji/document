@@ -11,5 +11,7 @@ https://reffect.co.jp/laravel/laravel_validation_understanding#validate
 - ログイン自作  
 https://laraweb.net/tutorial/1888/  
 https://laraweb.net/tutorial/1901/
+- 検索機能  
+https://qiita.com/JUM22676603/items/ea1f53579acad1da29d3
 - Udemy  
 https://github.com/uchidayuma/udemy-laravel8-mysql-simple-memo/tree/feature_ecs

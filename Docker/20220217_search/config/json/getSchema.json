@@ -1,0 +1,34 @@
+{
+    "profileSchema": {
+        "fields": {
+            "age": {
+                "writeAccess": "clientModify",
+                "type": "integer"
+            },
+            "email": {
+                "writeAccess": "clientModify",
+                "type": "string"
+            },
+            "gender": {
+                "writeAccess": "clientModify",
+                "type": "string"
+            },
+            "birthMonth": {
+                "writeAccess": "clientModify",
+                "type": "integer"
+            },
+            "birthDay": {
+                "writeAccess": "clientModify",
+                "type": "integer"
+            }
+        }
+    },
+    "dataSchema": {},
+    "dynamicSchema": false,
+    "statusCode": 200,
+    "errorCode": 0,
+    "apiVersion": 2,
+    "statusReason": "OK",
+    "callId": "323beb60290b430c8834a2c699d90ca7",
+    "time": "2015-03-22T11:42:25.943Z"
+}

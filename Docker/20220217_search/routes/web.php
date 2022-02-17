@@ -17,7 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-#Route::get('/search', 'UsersController@search');
-Route::get('/search', 'UsersController@mocksearch');
-
 Route::get('/', 'UsersController@index');
+Route::get('/search', 'UsersController@getschema');

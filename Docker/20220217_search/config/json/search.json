@@ -1,18 +1,13 @@
-[
-    {
-        "id": 1,
-        "name": "\u5ca9\u5d0e\u84ee",
-        "sex": "\u7537",
-        "age": "34",
-        "created_at": "2022-02-16T14:46:58.000000Z",
-        "updated_at": "2022-02-16T14:46:58.000000Z"
-    },
-    {
-        "id": 2,
-        "name": "\u6a2a\u7530\u62d3\u4e5f",
-        "sex": "\u7537",
-        "age": "25",
-        "created_at": "2022-02-16T14:46:58.000000Z",
-        "updated_at": "2022-02-16T14:46:58.000000Z"
-    }
-]
+{
+    "results": [
+        {
+            "count(*)": 1527
+        }
+    ],
+    "objectsCount": 1,
+    "totalCount": 1527,
+    "statusCode": 200,
+    "errorCode": 0,
+    "statusReason": "OK",
+    "callId": "1234"
+}

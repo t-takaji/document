@@ -43,6 +43,10 @@ php artisan route:list
 ```
 php artisan make:controller UsersController
 ```
+ - リクエスト作成（バリデーションとか定義する）  
+```
+php artisan make:request SearchRequest
+```
  - シーダー作成
 ```
 php artisan make:seeder UsersTableSeeder

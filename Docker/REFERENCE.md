@@ -15,3 +15,7 @@ https://laraweb.net/tutorial/1901/
 https://qiita.com/JUM22676603/items/ea1f53579acad1da29d3
 - Udemy  
 https://github.com/uchidayuma/udemy-laravel8-mysql-simple-memo/tree/feature_ecs
+
+
+- vscodeでのPHP整形  
+PHP Intelephense

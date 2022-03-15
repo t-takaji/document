@@ -31,9 +31,9 @@ docker exec -it app bash
 ```
 
 ## Laravel Command
- - LaravelMix コンパイル
+ - Laravelバージョン確認
 ```
-npm run dev
+php artisan --version
 ```
  - マイグレーションファイルの内容をデータベースに反映
 ```

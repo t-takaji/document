@@ -1,11 +1,13 @@
-## Install Docker for Mac
-1. 「docker for mac」でGoogle検索
-2. 「Install Docker Desktop on Mac」のリンクからダウンロードする
+## Dockerのダウンロードとインストール
+https://docs.docker.com/desktop/mac/install/
 
-
-## Docker Command
+## Dockerコマンド
 
  - イメージのビルド
+```
+docker-compose build --no-cache 
+```
+ - イメージのビルド（キャッシュなし）
 ```
 docker-compose build --no-cache 
 ```
@@ -16,6 +18,10 @@ docker-compose up -d
  - コンテナを停止・削除
 ```
 docker-compose down
+```
+ - コンテナを停止・削除（ボリューム削除含む）
+```
+docker-compose down -v
 ```
  - コンテナの一覧を表示
 ```
@@ -30,36 +36,7 @@ docker-compose logs
 docker exec -it app bash
 ```
 
-## Laravel Command
- - Laravelバージョン確認
-```
-php artisan --version
-```
- - マイグレーションファイルの内容をデータベースに反映
-```
-php artisan migrate
-```
- - ルーティングの確認
-```
-php artisan route:list
-```
- - コントローラー作成
-```
-php artisan make:controller UsersController
-```
- - リクエスト作成（バリデーションとか定義する）  
-```
-php artisan make:request SearchRequest
-```
- - シーダー作成
-```
-php artisan make:seeder UsersTableSeeder
-```
-- seederを使ってダミーデータを入れる
-```
-php artisan db:seed --class=TestDataSeeder
-```
-## DB Command
+## DBコマンド
 ```
 psql -U postgres
 ```

@@ -5,7 +5,7 @@ https://docs.docker.com/desktop/mac/install/
 
  - イメージのビルド
 ```
-docker-compose build --no-cache 
+docker-compose build
 ```
  - イメージのビルド（キャッシュなし）
 ```

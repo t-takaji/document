@@ -3,6 +3,16 @@ https://docs.docker.com/desktop/mac/install/
 
 ## Dockerコマンド
 
+### dockerfile
+ - イメージのビルド
+```
+docker build -t tomcat9 .
+```
+ - コンテナ起動
+```
+docker run -d -p 80:80 -p 443:8443 tomcat9
+```
+### docker-compose
  - イメージのビルド
 ```
 docker-compose build

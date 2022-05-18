@@ -1,4 +1,4 @@
-## Linux Command
+## コマンド
 - 過去90日分のlogファイルだけ残す（カレントディレクトリのみ対象）
 ```
 find /var/log/tomcat/hoge/ -maxdepth 1 -mtime +90 -name "*.log" | xargs rm
@@ -22,13 +22,24 @@ find /foo/bar/ -name "*.jpeg"
 du -m /var/log/tomcat/
 ```
 
-- ディレクトリ階層を表示する  
+- ディレクトリ階層を表示する（tree使える場合）
 ```
 tree -d
 ```
-OR  
+
+- ディレクトリ階層を表示する（tree使えない場合）
 ```
 find . -type d | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
+```
+
+- tar.gz解凍（-h：シンボリックリンク）
+```
+tar zxf {ファイル名} -C {展開先} -h
+```
+
+- 改行コード変換
+```
+dos2unix *.sh
 ```
 
 ## ・cron
@@ -36,6 +47,7 @@ find . -type d | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
 ```
 crontab -l
 ```
+
 - 設定
 ```
 crontab -e

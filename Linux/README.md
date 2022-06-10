@@ -1,4 +1,8 @@
 ## コマンド
+- grepしながらtail
+```
+tail -f /var/log/tomcat/hoge/Application.log | grep -e "HOGE" --line-buffered
+```
 - 過去90日分のlogファイルだけ残す（カレントディレクトリのみ対象）
 ```
 find /var/log/tomcat/hoge/ -maxdepth 1 -mtime +90 -name "*.log" | xargs rm

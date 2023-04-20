@@ -49,7 +49,7 @@ tar zxf {ファイル名} -C {展開先} -h
 dos2unix *.sh
 ```
 
-## ・cron
+## cron
 #### 確認
 ```
 crontab -l
@@ -60,3 +60,14 @@ crontab -l
 crontab -e
 ```
 ※以降は「i」で編集モード、「ESC」で戻る、「:wq」で保存などEmacsと操作同じ  
+
+## kill
+#### プロセスID確認
+```
+ps -ef | grep java | grep /usr/local/tomcat/prj/ | grep BatchKicker
+```
+
+#### kill
+```
+kill [プロセスID]
+```

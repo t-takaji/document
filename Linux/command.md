@@ -2,6 +2,10 @@
 ```
 tail -f /var/log/tomcat/hoge/Application.log | grep -e "HOGE" --line-buffered
 ```
+#### 1日以上前のcsvファイルを削除する
+```
+find /var/log/xxx/ -mtime +0 -name "*.csv" | xargs rm
+```
 #### 過去90日分のlogファイルだけ残す（カレントディレクトリのみ対象）
 ```
 find /var/log/tomcat/hoge/ -maxdepth 1 -mtime +90 -name "*.log" | xargs rm

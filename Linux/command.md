@@ -28,6 +28,11 @@ find . -path "./demo" -prune -o -type f -newermt "2023-03-29 13:00:00" -ls
 find /foo/bar/ -name "*.jpeg"
 ```
 
+#### 指定ディレクトリで「キーワード」を再帰的に検索
+```
+grep -r [検索対象] [ディレクトリ]
+```
+
 #### 容量確認（-k：KB、-m：MB）
 ```
 du -m /var/log/tomcat/

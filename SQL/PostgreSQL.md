@@ -12,3 +12,19 @@ SELECT * FROM freearea t WHERE t::text LIKE '%:has%';
 ```
 UPDATE company SET companyname = regexp_replace(companyname,'a.com','b.com', 'g');
 ```
+
+#### 1日の最大受注数を取得
+
+```
+SELECT cast( ordertime as date ), COUNT(*) AS row_count
+FROM ordersummary
+GROUP BY cast( ordertime as date )
+HAVING COUNT(*) = (
+    SELECT MAX(row_count)
+    FROM (
+        SELECT COUNT(*) AS row_count
+        FROM ordersummary
+        GROUP BY cast( ordertime as date )
+    ) AS counts
+);
+```

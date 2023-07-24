@@ -3,6 +3,11 @@
 SELECT tablename FROM pg_tables WHERE schemaname = 'public';
 ```
 
+#### sequence取得
+```
+SELECT * FROM information_schema.sequences WHERE sequence_name IN ('hoge_seq');
+```
+
 #### 「:has」を含むカラムを検索する
 ```
 SELECT * FROM freearea t WHERE t::text LIKE '%:has%';

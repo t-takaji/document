@@ -58,6 +58,12 @@ tar zxf {ファイル名} -C {展開先} -h
 dos2unix *.sh
 ```
 
+## 通信
+#### グローバルIPアドレス確認
+```
+curl inet-ip.info
+```
+
 ## cron
 #### 確認
 ```

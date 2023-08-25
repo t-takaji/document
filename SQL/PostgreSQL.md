@@ -33,3 +33,9 @@ HAVING COUNT(*) = (
     ) AS counts
 );
 ```
+
+### sqlファイルによるリストア
+```
+cd "C:\Program Files\PostgreSQL\13\bin\
+psql -U postgres -d dbname -f "C:\Downloads\dump.sql"
+```

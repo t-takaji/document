@@ -1,3 +1,4 @@
+## 調査
 #### grepしながらtail
 ```
 tail -f /var/log/tomcat/hoge/Application.log | grep -e "HOGE" --line-buffered
@@ -62,6 +63,22 @@ dos2unix *.sh
 #### グローバルIPアドレス確認
 ```
 curl inet-ip.info
+```
+#### curl
+```
+-H   ：リクエストヘッダを指定する
+-X   ：HTTPメソッドの指定(GET/POST)
+-d   ：HTTPBodyにパラメーターを設定してPOST、ファイルで指定する場合は@ファイル名とする
+-i   ：HTTPレスポンスヘッダーの取得(HTTPヘッダを出力)
+-k   ：SSL接続(HTTPS)で証明書エラーをスキップ
+-u   ：Basic認証
+
+コマンド例）
+curl -X POST -H "Content-Type: application/x-www-form-urlencoded;charset=UTF-8" -d "" -i -k -u BASICID:BASICPW https://xxxx
+curl -X POST -H "Content-Type: application/json;charset=UTF-8" -d @test.json -i -k -u BASICID:BASICPW https://xxxx
+
+test.json例）
+{"to":{"number":"09000000000"},"content":{"message":"test"}}
 ```
 
 ## cron

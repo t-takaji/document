@@ -18,6 +18,11 @@ SELECT * FROM freearea t WHERE t::text LIKE '%:has%';
 UPDATE company SET companyname = regexp_replace(companyname,'a.com','b.com', 'g');
 ```
 
+#### UPDATEして更新内容を確認する
+```
+UPDATE <TBL名> SET <カラム名> = 'hoge' RETURNING *;
+```
+
 #### 1日の最大受注数を取得
 
 ```

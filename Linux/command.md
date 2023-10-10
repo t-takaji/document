@@ -31,7 +31,7 @@ find /foo/bar/ -name "*.jpeg"
 
 #### カレントディレクトリで「キーワード」を検索
 ```
-find . -name "*.properties" | xargs grep "キーワード"
+find . -name "*.properties" -or  -name "*.dicon" | xargs grep "キーワード"
 ```
 
 #### 指定ディレクトリで「キーワード」を再帰的に検索

@@ -29,9 +29,14 @@ find . -path "./demo" -prune -o -type f -newermt "2023-03-29 13:00:00" -ls
 find /foo/bar/ -name "*.jpeg"
 ```
 
+#### カレントディレクトリで「キーワード」を検索
+```
+find . -name "*.properties" | xargs grep "キーワード"
+```
+
 #### 指定ディレクトリで「キーワード」を再帰的に検索
 ```
-grep -r [検索対象] [ディレクトリ]
+grep -r [キーワード] [ディレクトリ]
 ```
 
 #### 容量確認（-k：KB、-m：MB）

@@ -3,6 +3,11 @@
 SELECT tablename FROM pg_tables WHERE schemaname = 'public';
 ```
 
+### 該当カラムの呼出テーブル一覧取得
+```
+SELECT table_name, column_name FROM information_schema.columns WHERE column_name = 'xxxseq';
+```
+
 #### sequence取得
 ```
 SELECT * FROM information_schema.sequences WHERE sequence_name IN ('hoge_seq');

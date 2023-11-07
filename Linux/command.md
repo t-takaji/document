@@ -15,7 +15,7 @@ find /var/log/tomcat/hoge/ -maxdepth 1 -mtime +90 -name "*.log" | xargs rm
 ```
 find . -mtime -3 -ls
 ```
-#### 日時指定してファイルを検索する  
+#### 日時指定してファイルを検索する（カレントディレクトリ）  
 ```
 find . -newermt '2021/12/20 19:06:00' -and ! -newermt '2021/12/20 19:08:00'
 ```
@@ -34,7 +34,7 @@ find /foo/bar/ -name "*.jpeg"
 find . -name "*.properties" -or -name "*.dicon" | xargs grep "キーワード"
 ```
 
-#### 指定ディレクトリで「キーワード」を再帰的に検索
+#### 指定ディレクトリで「キーワード」を再帰的に検索（.で全件検索）
 ```
 grep -r [キーワード] [ディレクトリ]
 ```

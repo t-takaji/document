@@ -86,6 +86,10 @@ curl -X POST -H "Content-Type: application/json" -d '{"customerno":"12345"}' htt
 test.json例）
 {"to":{"number":"09000000000"},"content":{"message":"test"}}
 ```
+#### ssh接続
+```
+ssh -i ~/.ssh/id_rsa -p 2222 root@localhost
+```
 
 ## cron
 #### 確認

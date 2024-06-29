@@ -49,3 +49,9 @@ HAVING COUNT(*) = (
 cd "C:\Program Files\PostgreSQL\13\bin\
 psql -U postgres -d dbname -f "C:\Downloads\dump.sql"
 ```
+
+### 統計情報とインデックスの再構築
+```
+VACUUM VERBOSE ANALYZE;
+REINDEX DATABASE {DBの名前};
+```

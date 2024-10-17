@@ -43,6 +43,16 @@ HAVING COUNT(*) = (
     ) AS counts
 );
 ```
+### pg_dump, pg_restoreによるバックアップ・リストア
+#### (1) dump
+```
+/usr/pgsql-9.6/bin/pg_dump -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -F c -b -v -f {出力ファイルのパス}/db_yyyymmdd.back {DBの名前}
+```
+#### (2) restore
+
+```
+/usr/pgsql-9.6/bin/pg_restore --clean -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -d dbname -v {リストアするファイルのパス}/db_yyyymmdd.back
+```
 
 ### sqlファイルによるリストア
 ```

@@ -63,5 +63,6 @@ psql -U postgres -d dbname -f "C:\Downloads\dump.sql"
 ### 統計情報とインデックスの再構築
 ```
 VACUUM VERBOSE ANALYZE;
+VACUUM FULL VERBOSE ANALYZE; -- 排他的ロックしてもいい場合
 REINDEX DATABASE {DBの名前};
 ```

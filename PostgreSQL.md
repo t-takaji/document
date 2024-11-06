@@ -45,8 +45,13 @@ HAVING COUNT(*) = (
 ```
 ### pg_dump, pg_restoreによるバックアップ・リストア
 #### (1) dump
+##### 全DB
 ```
 /usr/pgsql-9.6/bin/pg_dump -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -F c -b -v -f {出力ファイルのパス}/db_yyyymmdd.back {DBの名前}
+```
+##### テーブルのみ
+```
+/usr/pgsql-9.6/bin/pg_dump -a -O -t {テーブル名} -F c -f {出力ファイルのパス}/db_yyyymmdd.back -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} {DBの名前}
 ```
 #### (2) restore
 

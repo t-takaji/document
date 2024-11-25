@@ -54,9 +54,13 @@ HAVING COUNT(*) = (
 /usr/pgsql-9.6/bin/pg_dump -a -O -t {テーブル名} -F c -f {出力ファイルのパス}/db_yyyymmdd.back -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} {DBの名前}
 ```
 #### (2) restore
-
+##### 全DB
 ```
 /usr/pgsql-9.6/bin/pg_restore --clean -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -d dbname -v {リストアするファイルのパス}/db_yyyymmdd.back
+```
+##### テーブルのみ
+```
+/usr/pgsql-9.6/bin/pg_restore -U {ユーザ名} -d dbname -t {テーブル名} -h {ホスト名} -p {ポ―ト番号} {リストアするファイルのパス}/db_yyyymmdd.back
 ```
 
 ### Windows

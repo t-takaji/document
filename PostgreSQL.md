@@ -59,10 +59,16 @@ HAVING COUNT(*) = (
 /usr/pgsql-9.6/bin/pg_restore --clean -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -d dbname -v {リストアするファイルのパス}/db_yyyymmdd.back
 ```
 
-### sqlファイルによるリストア
+### Windows
+#### (1) psql によるリストア
 ```
 cd "C:\Program Files\PostgreSQL\13\bin\
-psql -U postgres -d dbname -f "C:\Downloads\dump.sql"
+psql -U {username} -d d{bname} -f "C:\Downloads\dump.sql"
+```
+#### (2) pg_restore によるリストア
+```
+cd "C:\Program Files\PostgreSQL\13\bin\
+pg_restore -U {username} -d {dbname} -t {tablename} "C:\Downloads\dump.sql"
 ```
 
 ### 統計情報とインデックスの再構築

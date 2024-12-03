@@ -67,7 +67,7 @@ HAVING COUNT(*) = (
 #### (1) psql によるリストア
 ```
 cd "C:\Program Files\PostgreSQL\13\bin\
-psql -U {username} -d d{bname} -f "C:\Downloads\dump.sql"
+psql -U {username} -p {ポート番号} -d {dbname} -f "C:\Downloads\dump.sql"
 ```
 #### (2) pg_restore によるリストア
 ```

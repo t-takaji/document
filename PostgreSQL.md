@@ -64,15 +64,16 @@ HAVING COUNT(*) = (
 ```
 
 ### Windows
-#### (1) psql によるリストア
+#### リストア
+##### (1) psql
 ```
 cd "C:\Program Files\PostgreSQL\13\bin\
-psql -U {username} -p {ポート番号} -d {dbname} -f "C:\Downloads\dump.sql"
+.\psql -U {username} -p {ポート番号} -d {dbname} -f "C:\Downloads\dump.sql"
 ```
-#### (2) pg_restore によるリストア
+##### pg_restore
 ```
 cd "C:\Program Files\PostgreSQL\13\bin\
-pg_restore -U {username} -d {dbname} -t {tablename} "C:\Downloads\dump.sql"
+.\pg_restore -U {username} -d {dbname} -t {tablename} "C:\Downloads\dump.sql"
 ```
 
 ### 統計情報とインデックスの再構築

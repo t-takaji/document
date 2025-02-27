@@ -30,7 +30,9 @@ find . -type f -newermt "2023-03-29 13:00:00" -ls
 ```
 
 #### 文言をgrepする（ファイル指定有＋行番号表示有）
+```
 grep -n -E "下さい" --include="*.{html,js,properties}" -r ./
+```
 
 #### 特定の拡張子のファイルを検索する  
 ```

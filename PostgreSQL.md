@@ -43,6 +43,19 @@ HAVING COUNT(*) = (
     ) AS counts
 );
 ```
+
+#### テーブルの削除
+```
+-- SELECT tablename FROM pg_tables WHERE schemaname = 'public';
+DROP TABLE test_table CASCADE;
+```
+
+#### SEQの削除
+```
+-- SELECT sequence_name FROM information_schema.sequences WHERE sequence_schema = 'public';
+DROP SEQUENCE test_seq CASCADE;
+```
+
 ### pg_dump, pg_restoreによるバックアップ・リストア
 #### (1) dump
 ##### 全DB

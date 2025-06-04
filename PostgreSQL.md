@@ -1,6 +1,17 @@
-#### テーブル一覧取得
+### SQL文
+
+#### DB初期化
+
+#### テーブルの削除
 ```
-SELECT tablename FROM pg_tables WHERE schemaname = 'public';
+-- SELECT tablename FROM pg_tables WHERE schemaname = 'public';
+DROP TABLE test_table CASCADE;
+```
+
+#### SEQの削除
+```
+-- SELECT sequence_name FROM information_schema.sequences WHERE sequence_schema = 'public';
+DROP SEQUENCE test_seq CASCADE;
 ```
 
 ### 該当カラムの呼出テーブル一覧取得
@@ -44,19 +55,9 @@ HAVING COUNT(*) = (
 );
 ```
 
-#### テーブルの削除
-```
--- SELECT tablename FROM pg_tables WHERE schemaname = 'public';
-DROP TABLE test_table CASCADE;
-```
+### ダンプ・リストア
 
-#### SEQの削除
-```
--- SELECT sequence_name FROM information_schema.sequences WHERE sequence_schema = 'public';
-DROP SEQUENCE test_seq CASCADE;
-```
-
-### pg_dump, pg_restoreによるバックアップ・リストア
+### Linux
 #### (1) dump
 ##### 全DB
 ```
@@ -76,18 +77,25 @@ DROP SEQUENCE test_seq CASCADE;
 /usr/pgsql-9.6/bin/pg_restore -U {ユーザ名} -d dbname -t {テーブル名} -h {ホスト名} -p {ポ―ト番号} {リストアするファイルのパス}/db_yyyymmdd.back
 ```
 
-### Windows
-#### リストア
-##### (1) psql
+### Windowsでのdump, restoreの方法
+
+#### 1. dump  
+コマンドプロンプト（管理者権限あり）で実施する。  
+PostgreSQLのbin配下（例：C:\Program Files\PostgreSQL\16\bin）に移動して以下コマンドを実施  
+
 ```
-cd "C:\Program Files\PostgreSQL\13\bin\
-.\psql -U {username} -p {ポート番号} -d {dbname} -f "C:\Downloads\dump.sql"
+pg_dump -U [ユーザー名] -h [ホスト名] -p [ポート番号] -F c -b -v -f [出力ファイル名].dump [データベース名]
 ```
-##### pg_restore
+
+例：pg_dump -U postgres -h localhost -p 5435 -F c -b -v -f testdb.dump testdb
+
+#### 2. restore
 ```
-cd "C:\Program Files\PostgreSQL\13\bin\
-.\pg_restore -U {username} -d {dbname} -t {tablename} "C:\Downloads\dump.sql"
+pg_restore -U [ユーザー名] -h [ホスト名] -p [ポート番号] -d [データベース名] -v [ダンプファイル名].dump
 ```
+
+例：pg_restore -U postgres -h localhost -p 5435 -d testdb -v testdb.dump
+
 
 ### 統計情報とインデックスの再構築
 ```

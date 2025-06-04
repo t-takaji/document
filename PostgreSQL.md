@@ -1,32 +1,20 @@
 ### SQL文
 
-#### DB初期化
+#### 【テーブル】
 
-#### テーブルの削除
+##### テーブルの削除
 ```
 -- SELECT tablename FROM pg_tables WHERE schemaname = 'public';
 DROP TABLE test_table CASCADE;
 ```
 
-#### SEQの削除
+##### 該当カラムの呼出テーブル一覧取得
 ```
--- SELECT sequence_name FROM information_schema.sequences WHERE sequence_schema = 'public';
-DROP SEQUENCE test_seq CASCADE;
+SELECT table_name, column_name FROM information_schema.columns WHERE column_name = 'test_column';
 ```
-
-### 該当カラムの呼出テーブル一覧取得
+##### 「hoge」を含むカラムを検索する
 ```
-SELECT table_name, column_name FROM information_schema.columns WHERE column_name = 'xxxseq';
-```
-
-#### sequence取得
-```
-SELECT * FROM information_schema.sequences WHERE sequence_name IN ('hoge_seq');
-```
-
-#### 「:has」を含むカラムを検索する
-```
-SELECT * FROM freearea t WHERE t::text LIKE '%:has%';
+SELECT * FROM freearea t WHERE t::text LIKE '%hoge%';
 ```
 
 #### 置換（a.com -> b.com）※'g'であるだけ繰り返す。なしで最初に見つけたものだけ。
@@ -55,11 +43,28 @@ HAVING COUNT(*) = (
 );
 ```
 
+
+
+
+#### 【SEQ】
+
+##### SEQの削除
+```
+-- SELECT sequence_name FROM information_schema.sequences WHERE sequence_schema = 'public';
+DROP SEQUENCE test_seq CASCADE;
+```
+
+##### SEQの取得
+```
+SELECT * FROM information_schema.sequences WHERE sequence_name IN ('hoge_seq');
+```
+
+
 ### ダンプ・リストア
 
-### Linux
-#### (1) dump
-##### 全DB
+### Linuxでのダンプ・リストア
+#### 1. dump
+##### DB
 ```
 /usr/pgsql-9.6/bin/pg_dump -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -F c -b -v -f {出力ファイルのパス}/db_yyyymmdd.back {DBの名前}
 ```
@@ -67,8 +72,8 @@ HAVING COUNT(*) = (
 ```
 /usr/pgsql-9.6/bin/pg_dump -a -O -t {テーブル名} -F c -f {出力ファイルのパス}/db_yyyymmdd.back -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} {DBの名前}
 ```
-#### (2) restore
-##### 全DB
+#### 2. restore
+##### DB
 ```
 /usr/pgsql-9.6/bin/pg_restore --clean -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -d dbname -v {リストアするファイルのパス}/db_yyyymmdd.back
 ```
@@ -77,7 +82,7 @@ HAVING COUNT(*) = (
 /usr/pgsql-9.6/bin/pg_restore -U {ユーザ名} -d dbname -t {テーブル名} -h {ホスト名} -p {ポ―ト番号} {リストアするファイルのパス}/db_yyyymmdd.back
 ```
 
-### Windowsでのdump, restoreの方法
+### Windowsでのダンプ・リストア
 
 #### 1. dump  
 コマンドプロンプト（管理者権限あり）で実施する。  

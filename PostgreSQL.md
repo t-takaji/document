@@ -59,6 +59,20 @@ DROP SEQUENCE test_seq CASCADE;
 SELECT * FROM information_schema.sequences WHERE sequence_name IN ('hoge_seq');
 ```
 
+##### 次のSEQの取得
+```
+SELECT nextval('goodsseq');
+```
+
+##### 現在のSEQの取得
+```
+SELECT currval('goodsseq');
+```
+
+##### SEQを設定
+```
+SELECT setval('goodsseq', 1000, false);
+```
 
 ### ダンプ・リストア
 

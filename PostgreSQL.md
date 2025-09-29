@@ -100,11 +100,17 @@ SELECT setval('goodsseq', 1000, false);
 コマンドプロンプト（管理者権限あり）で実施する。  
 PostgreSQLのbin配下（例：C:\Program Files\PostgreSQL\16\bin）に移動して以下コマンドを実施  
 
+#### DB
 ```
 pg_dump -U [ユーザー名] -h [ホスト名] -p [ポート番号] -F c -b -v -f [出力ファイル名].dump [データベース名]
 ```
 
 例：pg_dump -U postgres -h localhost -p 5435 -F c -b -v -f testdb.dump testdb
+
+#### テーブルのみ
+```
+pg_dump -h {hostname} -p {portnumber} -U {username} -F c -t {table1} -t {table2} -f "C:\Users\Desktop\table.backup" {dbname}
+```
 
 #### 2. restore
 #### DB

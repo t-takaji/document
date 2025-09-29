@@ -54,11 +54,6 @@ HAVING COUNT(*) = (
 DROP SEQUENCE test_seq CASCADE;
 ```
 
-##### SEQの取得
-```
-SELECT * FROM information_schema.sequences WHERE sequence_name IN ('hoge_seq');
-```
-
 ##### 次のSEQの取得
 ```
 SELECT nextval('goodsseq');
@@ -66,7 +61,10 @@ SELECT nextval('goodsseq');
 
 ##### 現在のSEQの取得
 ```
+-- nextvalした後
 SELECT currval('goodsseq');
+-- nextvalしない場合
+SELECT last_value from '対象のシーケンス名' ;
 ```
 
 ##### SEQを設定

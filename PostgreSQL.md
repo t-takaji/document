@@ -107,12 +107,17 @@ pg_dump -U [ユーザー名] -h [ホスト名] -p [ポート番号] -F c -b -v -
 例：pg_dump -U postgres -h localhost -p 5435 -F c -b -v -f testdb.dump testdb
 
 #### 2. restore
+#### DB
 ```
 pg_restore -U [ユーザー名] -h [ホスト名] -p [ポート番号] -d [データベース名] -v [ダンプファイル名].dump
 ```
 
 例：pg_restore -U postgres -h localhost -p 5435 -d testdb -v testdb.dump
 
+#### テーブルのみ
+```
+pg_restore -h {hostname} -p {portnumber} -U {username} -d {dbname} -t {table1} -t {table2} -v "C:\Users\Desktop\table.backup"
+```
 
 ### 統計情報とインデックスの再構築
 ```

@@ -74,6 +74,12 @@ tar zxf xxx.tar.gz -C ../xxx -h
 dos2unix *.sh
 ```
 
+#### ファイルの同期
+/data/tmp/内のファイルを同期（まったく一緒にする）
+```
+rsync -ahuvz --delete -e 'ssh -p 22' --bwlimit=25000 --log-file=/var/log/tmp/rsync-`date +"%Y%m%d-%H%M%S"`.log /data/tmp/ userid@xxx.xxx.xxx.xxx:/data/tmp/
+```
+
 ## 通信
 #### グローバルIPアドレス確認
 ```

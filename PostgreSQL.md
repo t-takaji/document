@@ -54,7 +54,7 @@ HAVING COUNT(*) = (
 DROP SEQUENCE test_seq CASCADE;
 ```
 
-##### 次のSEQの取得
+##### SEQを1つ増やす
 ```
 SELECT nextval('goodsseq');
 ```

@@ -72,10 +72,10 @@ SELECT last_value from '対象のシーケンス名' ;
 SELECT setval('goodsseq', 1000, false);
 ```
 
-### ダンプ・リストア
+#### 【ダンプ・リストア】
 
-### Linuxでのダンプ・リストア
-#### 1. dump
+##### Linuxでのダンプ・リストア
+##### 1. dump
 ##### DB
 ```
 /usr/pgsql-9.6/bin/pg_dump -h {ホスト名} -p {ポ―ト番号} -U {ユーザ名} -F c -b -v -f {出力ファイルのパス}/db_yyyymmdd.back {DBの名前}
@@ -94,7 +94,7 @@ SELECT setval('goodsseq', 1000, false);
 /usr/pgsql-9.6/bin/pg_restore -U {ユーザ名} -d dbname -t {テーブル名} -h {ホスト名} -p {ポ―ト番号} {リストアするファイルのパス}/db_yyyymmdd.back
 ```
 
-### Windowsでのダンプ・リストア
+#### Windowsでのダンプ・リストア
 
 #### 1. dump  
 コマンドプロンプト（管理者権限あり）で実施する。  
@@ -125,7 +125,9 @@ pg_restore -U [ユーザー名] -h [ホスト名] -p [ポート番号] -d [デ�
 pg_restore -h {hostname} -p {portnumber} -U {username} -d {dbname} -t {table1} -t {table2} -v "C:\Users\Desktop\table.backup"
 ```
 
-### 統計情報とインデックスの再構築
+#### 【DBバージョンアップ】
+
+##### 統計情報とインデックスの再構築
 ```
 VACUUM VERBOSE ANALYZE;
 VACUUM FULL VERBOSE ANALYZE; -- 排他的ロックしてもいい場合

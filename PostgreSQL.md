@@ -129,5 +129,5 @@ pg_restore -h {hostname} -p {portnumber} -U {username} -d {dbname} -t {table1} -
 ```
 VACUUM VERBOSE ANALYZE;
 VACUUM FULL VERBOSE ANALYZE; -- 排他的ロックしてもいい場合
-REINDEX DATABASE {DBの名前};
+REINDEX DATABASE "DBの名前"; -- ""をつけないとエラーになるケースあり（例：-がある場合）
 ```

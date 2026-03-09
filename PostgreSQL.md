@@ -64,7 +64,7 @@ SELECT nextval('goodsseq');
 -- nextvalした後
 SELECT currval('goodsseq');
 -- nextvalしない場合
-SELECT last_value from '対象のシーケンス名' ;
+SELECT last_value from 対象のシーケンス名 ;
 ```
 
 ##### SEQを設定

@@ -68,8 +68,9 @@ SELECT last_value from 対象のシーケンス名 ;
 ```
 
 ##### SEQを設定
+true... 次回は1001から。false... 次回は1000から
 ```
-SELECT setval('goodsseq', 1000, false);
+SELECT setval('goodsseq', 1000, true);
 ```
 
 #### 【ダンプ・リストア】

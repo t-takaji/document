@@ -134,3 +134,17 @@ VACUUM VERBOSE ANALYZE;
 VACUUM FULL VERBOSE ANALYZE; -- 排他的ロックしてもいい場合
 REINDEX DATABASE "DBの名前"; -- ""をつけないとエラーになるケースあり（例：-がある場合）
 ```
+
+#### 【テスト】
+
+##### レコードロック
+```
+BEGIN;
+
+SELECT *
+FROM orderinfo
+WHERE orderCode = 'XXXXX'
+FOR UPDATE;
+
+COMMIT;
+```

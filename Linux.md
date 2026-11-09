@@ -113,6 +113,12 @@ test.json例）
 ssh -i ~/.ssh/id_rsa -p 2222 root@localhost
 ```
 
+#### 証明書やTLS通信の情報を確認するコマンド
+（使用されたTLSバージョン、使用された暗号スイート、サーバ証明書の内容、証明書チェーン）
+```
+openssl s_client -connect :=接続先IPアドレス -showcerts
+```
+
 ## cron
 #### 確認
 ```
